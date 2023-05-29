@@ -69,42 +69,20 @@ module.exports = {
 			//let UserOption = options.getUser("OPTIONNAME");
 			//let ChannelOption = options.getChannel("OPTIONNAME");
 			//let RoleOption = options.getRole("OPTIONNAME");
-			exec(`git pull`, (error, stdout) => {
-                let response = (error || stdout);
-                if (!error) {
-                    if (response.includes("Already up to date.")) {
-                        interaction.reply('Bot already up to date. No changes since last pull')
-                    } else {
-                        interaction.reply('Pulled from GitHub. Restarting bot. \n\nLogs: \n```' + response + "```")
+			interaction.reply('Pulled from GitHub. Restarting bot.')
                         setTimeout(() => {
                             process.exit();
                         }, 1000)
-                    };
-                } else {
-					interaction.reply('Error while pulling from GitHub. \n\nLogs: \n```' + response + "```")
-				}
-            });
 		} catch (e) {
 			console.log(String(e.stack).bgRed)
 		}
 	},
     messageRun: async (client, message, args, plusArgs, cmdUser, text, prefix) => {
         try {
-            exec(`git pull`, (error, stdout) => {
-                let response = (error || stdout);
-                if (!error) {
-                    if (response.includes("Already up to date.")) {
-                        message.channel.send('Bot already up to date. No changes since last pull')
-                    } else {
-                        message.channel.send('Pulled from GitHub. Restarting bot. \n\nLogs: \n```' + response + "```")
+            message.reply('Pulled from GitHub. Restarting bot.')
                         setTimeout(() => {
                             process.exit();
                         }, 1000)
-                    };
-                } else {
-					message.channel.send('Error while pulling from GitHub. \n\nLogs: \n```' + response + "```")
-				}
-            });
         } catch (e) {
             console.log(String(e.stack).bgRed)
         }
