@@ -1,0 +1,33 @@
+{
+  "name": "nova-discord-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Rainbow-Studios/Multi-Purpose-Bot"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/The-Rainbow-Studios/Multi-Purpose-Bot/issues"
+  },
+  "homepage": "https://github.com/The-Rainbow-Studios/Multi-Purpose-Bot#readme",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "captcha-canvas": "^3.2.1",
+    "colors": "^1.4.0",
+    "discord-gamecord": "^4.4.0",
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.0.3",
+    "mongoose": "^7.0.4",
+    "node-fetch": "^2.6.9",
+    "quickmongo": "^5.2.0",
+    "string-similarity": "^4.0.4",
+    "visa2discord": "^1.0.14"
+  }
+}
