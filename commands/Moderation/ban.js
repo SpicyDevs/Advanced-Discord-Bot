@@ -48,7 +48,7 @@ module.exports = {
   	maxplusargs: 0, // maximum args for the message, splitted with "++" , 0 == none [OPTIONAL]
   	argsmissing_message: "", //Message if the user has not enough args / not enough plus args, which will be sent, leave emtpy / dont add, if you wanna use command.usage or the default message! [OPTIONAL]
   	argstoomany_message: "", //Message if the user has too many / not enough args / too many plus args, which will be sent, leave emtpy / dont add, if you wanna use command.usage or the default message! [OPTIONAL]
-	slashRun: async (client, interaction) => {
+	 messageRun: async (client, message, args, plusArgs, cmdUser, text, prefix) => {
 
 
         const member = message.mentions.members.first();
