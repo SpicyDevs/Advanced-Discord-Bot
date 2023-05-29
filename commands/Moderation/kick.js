@@ -63,4 +63,21 @@ module.exports = {
             .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
         message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
     },
+	
+		slashRun: async (client, interaction) => {
+			const member = interaction.options.getMember('user');
+        const reason = interaction.options.getString('reason') || 'No reason provided';
+
+        if (!member.kickable) {
+            return interaction.reply({ content: 'I cannot kick this user! Do they have a higher role? Do I have kick permissions?', ephemeral: true });
+        }
+
+        await member.kick(reason)
+            .catch(error => interaction.reply({ content: `Sorry ${interaction.user} I couldn't kick because of : ${error}`, ephemeral: true }));
+        interaction.reply(`${member.user.tag} has been kicked by ${interaction.user.tag} because: ${reason}`);
+    },
 };
+
+};
+
+
